@@ -29,10 +29,6 @@ const protect = async (req, res, next) => {
   }
 };
 
-app.get("/", (req, res) => {
-  res.json("hello");
-});
-
 app.post("/login", async (req, res) => {
   const { email, password, category } = req.body;
 
@@ -77,15 +73,17 @@ app.post("/login", async (req, res) => {
     }
 
     res.json({
-      user,
+      user:user1,
       token: generateToken(user1._id),
       message: "Successfull login",
+      category:user1.category
     });
   } else {
     res.json({
-      user,
+      user:user1,
       token: generateToken(user1._id),
       message: "Successfull login",
+      category:user1.category
     });
   }
 });

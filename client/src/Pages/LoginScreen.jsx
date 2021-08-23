@@ -36,7 +36,8 @@ const LoginScreen = () => {
         if(token1){
             SetUserData({
                 token:token1,
-                user:data.user
+                user:data.user,
+                category:data.category
             })
             SetSucc(data.message)
             localStorage.setItem('Token',JSON.stringify(token1))

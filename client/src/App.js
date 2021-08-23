@@ -25,7 +25,8 @@ function App() {
   const [userData,SetUserData]=React.useState({
     token:undefined,
     user:undefined,
-    userTransactionData:undefined
+    userTransactionData:undefined,
+    category:undefined
   });
 
  
