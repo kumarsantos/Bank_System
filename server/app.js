@@ -29,6 +29,10 @@ const protect = async (req, res, next) => {
   }
 };
 
+app.get("/", (req, res) => {
+  res.json("hello");
+});
+
 app.post("/login", async (req, res) => {
   const { email, password, category } = req.body;
 
@@ -231,7 +235,7 @@ app.post("/deposite", protect, async (req, res) => {
   }
 });
 
-if(process.env.NOD_ENV=="production"){
+if (process.env.NOD_ENV == "production") {
   app.use(express.static("client/build"));
 }
 
